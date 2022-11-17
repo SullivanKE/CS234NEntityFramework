@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS234NEntityFramework", "CS234NEntityFramework\CS234NEntityFramework.csproj", "{B5C17162-B01F-429C-92A7-C2D265AC8ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS234NEF-Tests", "CS234NEF-Tests\CS234NEF-Tests.csproj", "{6E52DC19-3A6C-4552-B086-62DFD425860E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5C17162-B01F-429C-92A7-C2D265AC8ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C17162-B01F-429C-92A7-C2D265AC8ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C17162-B01F-429C-92A7-C2D265AC8ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C17162-B01F-429C-92A7-C2D265AC8ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E52DC19-3A6C-4552-B086-62DFD425860E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E52DC19-3A6C-4552-B086-62DFD425860E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E52DC19-3A6C-4552-B086-62DFD425860E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E52DC19-3A6C-4552-B086-62DFD425860E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BB62CEA-8C4A-47A8-B1FF-22E668AFCBD2}
+	EndGlobalSection
+EndGlobal
