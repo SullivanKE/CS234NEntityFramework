@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CS234NEntityFramework.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,8 @@ namespace CS234NEF_Tests
         [SetUp]
         public void Setup()
         {
+
+            dbContext = new BitsContext();
         }
 
         [Test]

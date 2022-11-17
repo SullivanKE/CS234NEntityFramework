@@ -14,15 +14,6 @@ namespace CS234NEF_Tests
         {
             dbContext = new BitsContext();
 
-        }
-
-        [Test]
-        public void GetAllTest()
-        {
-            // Get all customers
-            accounts = dbContext.Accounts.OrderBy<Account, string>(a => a.Name).ToList();
-
-
             a = new Account();
             a.Name = "Fake Name";
             a.Address = "Fake Address";
@@ -33,6 +24,13 @@ namespace CS234NEF_Tests
             a.ContactName = "Test";
             a.SalesPersonName = "Test";
 
+        }
+
+        [Test]
+        public void GetAllTest()
+        {
+            // Get all customers
+            accounts = dbContext.Accounts.OrderBy<Account, string>(a => a.Name).ToList();
 
             Assert.IsNotNull(accounts);
             Assert.IsNotEmpty(accounts);
@@ -48,16 +46,6 @@ namespace CS234NEF_Tests
         [Test]
         public void CreateTest()
         {
-            a = new Account();
-            a.Name = "Not a Name";
-            a.Address = "Not an Address";
-            a.City = "Not a City";
-            a.State = "OR";
-            a.Zipcode = "12345";
-            a.Phone = "1234567890";
-            a.ContactName = "Test";
-            a.SalesPersonName = "Test";
-
             dbContext.Accounts.Add(a);
             dbContext.SaveChanges();
 
