@@ -12,7 +12,8 @@ namespace CS234NEntityFramework.Models
 
         public int AppUserId { get; set; }
         public string Name { get; set; } = null!;
-
+        public string Password { get; set; } = null!;
+        public string Role { get; set; } = null!;
         public virtual ICollection<InventoryTransaction> InventoryTransactions { get; set; }
     }
 }
