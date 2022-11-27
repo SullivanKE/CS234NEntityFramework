@@ -43,6 +43,7 @@ namespace CS234NEntityFramework.Models
         public virtual DbSet<InventoryTransactionType> InventoryTransactionTypes { get; set; } = null!;
         public virtual DbSet<Mash> Mashes { get; set; } = null!;
         public virtual DbSet<MashStep> MashSteps { get; set; } = null!;
+        public virtual DbSet<Post> Posts { get; set; } = null!;
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<ProductContainerInventory> ProductContainerInventories { get; set; } = null!;
         public virtual DbSet<ProductContainerSize> ProductContainerSizes { get; set; } = null!;
@@ -1075,6 +1076,28 @@ namespace CS234NEntityFramework.Models
                     .HasForeignKey(d => d.MashId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("mast_step_mash_FK");
+            });
+
+            modelBuilder.Entity<Post>(entity =>
+            {
+                entity.HasKey(e => new { e.PostId })
+                    .HasName("PRIMARY");
+                entity.ToTable("post");
+
+                entity.Property(e => e.PostId)
+                    .HasColumnName("post_id");
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(50)
+                    .HasColumnName("title");
+
+                entity.Property(e => e.Body)
+                    .HasMaxLength(200)
+                    .HasColumnName("body");
+
+                entity.Property(e => e.Role)
+                    .HasMaxLength(20)
+                    .HasColumnName("role");
             });
 
             modelBuilder.Entity<Product>(entity =>

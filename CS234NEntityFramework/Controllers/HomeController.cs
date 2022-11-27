@@ -15,16 +15,18 @@ namespace CS234NEntityFramework.Controllers
         public IActionResult Index()
         {
             ViewData["AppConfig"] = _context.AppConfigs.FirstOrDefault();
+            ViewData["Posts"] = _context.Posts.Where(p => p.Role == "Client");
             return View();
         }
         [HttpPost]
-        public IActionResult Index(AppUser u)
+        public IActionResult Index(AppUser userInput)
         {
-            AppUser? user = _context.AppUsers.FirstOrDefault(u => u.Name == u.Name);
+            AppUser? user = _context.AppUsers.FirstOrDefault(userInput => userInput.Name == userInput.Name);
             ViewData["AppConfig"] = _context.AppConfigs.FirstOrDefault();
-            if (user != null && u.Password == user.Password) // I'm not going to do any kind of encryption here, but I understand saving plain passwords is a bad idea.
+            if (user != null && userInput.Password == user.Password) // I'm not going to do any kind of encryption here, but I understand saving plain passwords is a bad idea.
             {
                 ViewData["Nav"] = RoleNav.GetRoleNav(user.Role);
+                ViewData["Posts"] = _context.Posts.ToList(); //TODO: Make this get posts based on roles
 
                 return View(user);
             }
