@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Home Page";
     AppConfig conf = ViewData["AppConfig"] as AppConfig;
+    Dictionary<string, List<string>>? navData = ViewData["Nav"] as Dictionary<string, List<string>>;
 }
 
 <div class="container" id="header">
@@ -29,12 +30,49 @@
 <hr />
 
 <div class="row" id="body">
-    <div class="col-md-3" id="navigation">
-        <nav class="nav flex-column">
+    <div class="col-md-2 border" id="navigation">
+        <ul class="nav flex-column">
+            @if(navData != null)
+            {
+                List<string> keys = navData.Keys.ToList();
+                foreach(string k in keys)
+                {
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="@k+head">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#@k" aria-expanded="true" aria-controls="collapseOne">
+                                        @k
+                                    </button>
+                                </h5>
+                            </div>
 
-        </nav>
+                            <div id="@k" class="collapse show" aria-labelledby="@k+head" data-parent="#accordion">
+                                <div class="card-body">
+                                    <ul class="list-inline">
+                                        @foreach(string l in navData[k])
+                                        {
+                                            <li class="list-inline-item">
+                                                <a class="nav-link" href="#">
+                                                    <small>@l</small>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                }
+            }
+            else
+            {
+                <li>Please Log In</li>
+            }
+        </ul>
     </div>
-    <div class="col-md-9" id="posts">
+    <div class="col-md-10 border" id="posts">
     </div>
 </div>
 

@@ -278,6 +278,14 @@ namespace CS234NEntityFramework.Models
                 entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .HasColumnName("name");
+
+                entity.Property(e => e.Password)
+                    .HasMaxLength(20)
+                    .HasColumnName("password");
+
+                entity.Property(e => e.Role)
+                    .HasMaxLength(20)
+                    .HasColumnName("role");
             });
 
             modelBuilder.Entity<Barrel>(entity =>
