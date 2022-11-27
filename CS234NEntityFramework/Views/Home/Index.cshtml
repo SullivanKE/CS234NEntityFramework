@@ -1,0 +1,45 @@
+﻿@using CS234NEntityFramework.Models;
+@model AppUser
+@{
+    ViewData["Title"] = "Home Page";
+    AppConfig conf = ViewData["AppConfig"] as AppConfig;
+}
+
+<div class="container" id="header">
+    <div class="row">
+        <div class="col-md-9" id="banner">
+            <img src="@conf.BreweryLogo" alt="@conf.BreweryName" style="width:100%;"/>
+            <div class="centered h1">@conf.BreweryName</div>
+        </div>
+        <div class="col-md-3" id="login">
+            <form method="post">
+
+                    <label asp-for="Name" class="col-sm-3">Username</label><br />
+                    <input asp-for="Name" class="col-sm-3" /><br />
+
+                    <label asp-for="Password" class="col-sm-3">Password</label><br />
+                    <input asp-for="Password" class="col-sm-3" /><br />
+
+                    <button type = "submit" class ="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row" id="body">
+    <div class="col-md-3" id="navigation">
+        <nav class="nav flex-column">
+
+        </nav>
+    </div>
+    <div class="col-md-9" id="posts">
+    </div>
+</div>
+
+<hr />
+
+<div class="text-right" id="footer">
+
+</div>
